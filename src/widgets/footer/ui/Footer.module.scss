@@ -1,0 +1,32 @@
+.footer {
+  background-color: var(--dark);
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 60px 0;
+
+    svg {
+      color: #fff;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 0 160px;
+    color: #fff;
+
+    &Title {
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    &Item {
+      margin-bottom: 4px;
+
+      font-size: 14px;
+      color: #b2b2b2;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.card {
+  border-bottom: 1px solid #fff;
+  &__wrap {
+    display: grid;
+    grid-template: auto / 100px 200px 50px 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info {
+    &Title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &Scent {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    &Quantity {
+    }
+
+    &Price {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

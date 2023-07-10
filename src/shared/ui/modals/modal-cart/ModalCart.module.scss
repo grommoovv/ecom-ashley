@@ -1,0 +1,39 @@
+.cart {
+  color: #fff;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+		padding-bottom: 16px;
+    border-bottom: 1px solid #fff;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__buttonX {
+  }
+
+  &__list {
+    margin: 40px 0px;
+
+    &Item {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__buttonV {
+    width: 100%;
+    height: 48px;
+    background-color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

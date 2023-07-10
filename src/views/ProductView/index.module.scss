@@ -1,0 +1,61 @@
+.product {
+  padding: 200px 2vw;
+  background-color: #faf4e5;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+
+  &__info {
+    width: 50%;
+  }
+
+  &__media {
+    width: 50%;
+
+    &Image {
+      width: 400px;
+      margin-left: auto;
+    }
+  }
+
+  li {
+    font-weight: 500;
+  }
+
+  &__info {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    gap: 1rem;
+    width: 50%;
+
+    &Scent {
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+    }
+    &Desc {
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+    }
+  }
+
+  .detailsList {
+    margin-bottom: 1rem;
+    li {
+      padding: 8px 0;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      &:nth-child(2) {
+        border: 0;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}

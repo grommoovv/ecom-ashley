@@ -1,0 +1,81 @@
+.card {
+  &__media {
+    position: relative;
+    height: 640px;
+
+    &Image {
+      // height: 640px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  &:hover {
+    .card__overlay {
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
+
+    .card__mediaImage {
+      transition: all 0.5s ease;
+      opacity: 0.25;
+    }
+  }
+
+  &__details {
+    padding-top: 1rem;
+    font-size: 14px;
+    z-index: 4;
+
+    &:hover {
+      transition: all 0.5s ease;
+      opacity: 0.75;
+    }
+
+    &Primary {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--dark);
+    }
+
+    &Secondary {
+      padding-top: 1rem;
+    }
+  }
+  &__title {
+    font-weight: 500;
+  }
+
+  &__scent {
+    font-weight: 500;
+  }
+}
+
+.card__details:hover {
+  .card__overlay {
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+
+  .card__mediaImage {
+    transition: all 0.5s ease;
+    opacity: 0.25;
+  }
+}

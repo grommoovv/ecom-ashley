@@ -1,0 +1,30 @@
+.shop {
+  padding: 200px 0;
+  background-color: #faf4e5;
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin: 0 2vw;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    gap: 60px 30px;
+  }
+
+  .text {
+    font-weight: 500;
+    line-height: 175%;
+    text-align: justify;
+  }
+}
