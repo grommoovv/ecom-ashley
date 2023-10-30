@@ -1,1 +1,1 @@
-export * from './format/formatToUSD'
+export * from './format'
