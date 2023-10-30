@@ -1,12 +1,20 @@
-import ProductsService from '@/entities/product/model/service/ProductService'
+import { ProductService } from '@/service'
 import { ShopView } from '@/views'
+
+interface PageProps {
+  searchParams: { search: string | undefined }
+}
 
 export const metadata = {
   title: 'Ashley & Co. Shop',
 }
 
-export default async function Shop() {
-  const products = await ProductsService.getAllProducts()
+const Page = async ({ searchParams: { search } }: PageProps) => {
+  return <div>Shop page {search}</div>
+
+  const products = await ProductService.getProducts()
 
   return <ShopView data={products} />
 }
+
+export default Page
