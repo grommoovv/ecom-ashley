@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { IProduct } from '@/entities/product'
-import classes from './index.module.scss'
+import { Product } from '@/types'
+import cls from './index.module.scss'
 import { ButtonAdd } from '@/shared/ui/buttons'
 
 interface Props {
-  data: IProduct
+  data: Product
 }
 
 const desc =
@@ -15,16 +15,15 @@ export const ProductView: React.FC<Props> = ({ data }) => {
   return (
     <>
       {data && (
-        <div className={classes.product}>
-          <div className={classes.product__head}>
+        <div className={cls.product}>
+          <div className={cls.product__head}>
             <div className=''>{data.scent}</div>
             <div className=''>{data.title}</div>
           </div>
 
-          <div className={`${classes.product__main} flex`}>
-            {/*  */}
-            <div className={classes.product__info}>
-              <div className={classes.product__infoScent}>
+          <div className={`${cls.product__main} flex`}>
+            <div className={cls.product__info}>
+              <div className={cls.product__infoScent}>
                 <ul className='scent-list'>
                   <li className='scent-list__item'>Delicate Lily</li>
                   <li className='scent-list__item'>Wild Ginger</li>
@@ -33,25 +32,21 @@ export const ProductView: React.FC<Props> = ({ data }) => {
                   <li className='scent-list__item'>Ylang Ylang</li>
                 </ul>
               </div>
-              <div className={classes.product__infoDesc}>{desc}</div>
-              <div className={classes.product__infoBottom}>
-                <ul className={classes.detailsList}>
+              <div className={cls.product__infoDesc}>{desc}</div>
+              <div className={cls.product__infoBottom}>
+                <ul className={cls.detailsList}>
                   <li>Scent description</li>
                   <li>Ingredients</li>
                   <li>Reviews</li>
                 </ul>
-                <div className={classes.detailsOffer}>
+                <div className={cls.detailsOffer}>
                   <ButtonAdd item={data} />
                 </div>
               </div>
             </div>
-            {/*  */}
-            <div className={classes.product__media}>
-              <img
-                className={classes.product__mediaImage}
-                src={data.image}
-                alt={data.title}
-              />
+
+            <div className={cls.product__media}>
+              <img className={cls.product__mediaImage} src={data.image} alt={data.title} />
             </div>
           </div>
         </div>
