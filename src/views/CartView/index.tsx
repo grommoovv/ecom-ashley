@@ -28,4 +28,3 @@ export const CartView = () => {
     </>
   )
 }
-// export default CartView
