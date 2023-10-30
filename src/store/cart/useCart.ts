@@ -1,22 +1,17 @@
-import { IProduct } from '@/entities/product'
+import { Cart, Product } from '@/types'
 import { create } from 'zustand'
 
-export interface ICart extends IProduct {
-  qty: number
+interface CartState {
+  cart: Cart[] | []
+  toggleItem: (item: Product) => void
+  inc: (qtyToInc: Cart) => void
+  dec: (qtyToDec: Cart) => void
 }
 
-interface IUseCart {
-  cart: ICart[] | []
-  toggleItemToCart: (item: IProduct) => void
-  increment: (qtyToInc: ICart) => void
-  decrement: (qtyToDec: ICart) => void
-}
-
-export const useCart = create<IUseCart>()((set, get) => ({
+export const useCart = create<CartState>()((set, get) => ({
   cart: [],
 
-  // Add / Delete item from cart Logic
-  toggleItemToCart: (item: IProduct) => {
+  toggleItem: (item: Product) => {
     set((state) => {
       const newItem = {
         ...item,
@@ -33,13 +28,12 @@ export const useCart = create<IUseCart>()((set, get) => ({
     })
   },
 
-  // Increment
-  increment: (qtyToInc: ICart) => {
+  inc: (item: Cart) => {
     set((state) => {
-      const itemIdx = state.cart.findIndex((item) => item.id === qtyToInc.id)
+      const itemIdx = state.cart.findIndex((item) => item.id === item.id)
       if (itemIdx !== -1) {
         const newCart = [...state.cart]
-        const newItem: ICart = {
+        const newItem: Cart = {
           ...newCart[itemIdx],
           qty: newCart[itemIdx].qty + 1,
         }
@@ -50,13 +44,12 @@ export const useCart = create<IUseCart>()((set, get) => ({
     })
   },
 
-  // Decrement
-  decrement: (qtyToDec: ICart) => {
+  dec: (item: Cart) => {
     set((state) => {
-      const itemIdx = state.cart.findIndex((item) => item.id === qtyToDec.id)
+      const itemIdx = state.cart.findIndex((item) => item.id === item.id)
       if (itemIdx !== -1) {
         const newCart = [...state.cart]
-        const newItem: ICart = {
+        const newItem: Cart = {
           ...newCart[itemIdx],
           qty: newCart[itemIdx].qty - 1,
         }
