@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-interface IUseModal {
+interface Modal {
   isMenu: boolean
   isCart: boolean
   isSearch: boolean
@@ -9,7 +9,7 @@ interface IUseModal {
   toggleSearch: () => void
 }
 
-export const useModal = create<IUseModal>()((set, get) => ({
+export const useModal = create<Modal>()((set, get) => ({
   isMenu: false,
   isCart: false,
   isSearch: false,
