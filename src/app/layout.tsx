@@ -1,13 +1,10 @@
 import { ModalRoot } from '@/shared/ui/modals'
-import '@/scss/globals.scss'
+import '@/shared/scss/globals.scss'
 import { Header } from '@/widgets/header'
 import { Footer } from '@/widgets/footer'
+import { FC, PropsWithChildren } from 'react'
 
-interface RootLayoutProps {
-  children: React.ReactNode
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en'>
       <body>
@@ -21,3 +18,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </html>
   )
 }
+
+export default RootLayout
