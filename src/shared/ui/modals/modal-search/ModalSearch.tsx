@@ -15,8 +15,8 @@ const ModalSearch: FC = () => {
     state.setSearchQuery,
   ])
 
-  console.log(router)
-  console.log(pathname)
+  // console.log(router)
+  // console.log(pathname)
 
   const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
