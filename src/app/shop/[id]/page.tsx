@@ -1,25 +1,21 @@
-import ProductService from '@/entities/product/model/service/ProductService'
+import { ProductService } from '@/service'
 import { ProductView } from '@/views'
 import { Metadata } from 'next'
 
-interface Props {
-  params: {
-    id: number
-  }
+interface PageProps {
+  params: { id: number }
 }
 
-export async function generateMetadata({
-  params: { id },
-}: Props): Promise<Metadata> {
-  const post = await ProductService.getOneProduct(id)
+export const generateMetadata = async ({ params: { id } }: PageProps): Promise<Metadata> => {
+  const product = await ProductService.getProduct(id)
 
-  return {
-    title: post.title,
-  }
+  return { title: product.title }
 }
 
-export default async function Product({ params: { id } }: Props) {
-  const product = await ProductService.getOneProduct(id)
+const Page = async ({ params: { id } }: PageProps) => {
+  const product = await ProductService.getProduct(id)
 
   return <ProductView data={product} />
 }
+
+export default Page
