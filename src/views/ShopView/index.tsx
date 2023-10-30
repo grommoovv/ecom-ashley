@@ -1,5 +1,5 @@
 import { IProduct } from '@/entities/product'
-import classes from './index.module.scss'
+import cls from './index.module.scss'
 import { Card } from '@/shared/ui/card/Card'
 
 interface Props {
@@ -45,15 +45,15 @@ export const ShopView: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className={classes.shop}>
-        <section className={classes.shop__categories}>
+      <div className={cls.shop}>
+        <section className={cls.shop__categories}>
           {shopItems.map((si) => (
-            <div className={classes.shop__category} key={si.id}>
-              <h2 className={classes.shop__title}>{si.title}</h2>
-              <ul className={classes.shop__list}>
-                <div className={classes.text}>{si.text}</div>
+            <div className={cls.shop__category} key={si.id}>
+              <h2 className={cls.shop__title}>{si.title}</h2>
+              <ul className={cls.shop__list}>
+                <div className={cls.text}>{si.text}</div>
                 {si.parts.map((sip) => (
-                  <li className={classes.shop__listItem} key={sip.id}>
+                  <li className={cls.shop__listItem} key={sip.id}>
                     <Card data={sip} />
                   </li>
                 ))}
